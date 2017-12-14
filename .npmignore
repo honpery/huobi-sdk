@@ -2,6 +2,7 @@ test
 .vscode
 tsconfig.json
 tslint.json
+.travis.yml
 
 *.log
 logs
