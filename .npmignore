@@ -1,0 +1,7 @@
+test
+.vscode
+tsconfig.json
+tslint.json
+
+*.log
+logs
