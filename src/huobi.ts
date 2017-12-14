@@ -1,10 +1,12 @@
+import { MarketAPI } from './fetch';
 
 export interface HuobiOptions {
     AccessKey?: string;
 }
 
 export class Huobi {
-    constructor(private _options: HuobiOptions) {
+    market = new MarketAPI();
 
-    }
+    constructor(private _options: HuobiOptions) { }
+
 }
