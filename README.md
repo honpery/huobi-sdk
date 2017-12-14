@@ -1,3 +1,4 @@
-# huobi-sdk [![Build Status](https://travis-ci.org/honpery/huobi-sdk.svg?branch=master)](https://travis-ci.org/honpery/huobi-sdk)
+# huobi-sdk [![Greenkeeper badge](https://badges.greenkeeper.io/honpery/huobi-sdk.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/honpery/huobi-sdk.svg?branch=master)](https://travis-ci.org/honpery/huobi-sdk)
 
-> The sdk for huobi.pro api.
+> 本SDK为[huobi](https://www.huobi.pro/zh-cn)的[官方API](https://github.com/huobiapi/API_Docs/wiki/REST_api_reference)的js封装。
+
