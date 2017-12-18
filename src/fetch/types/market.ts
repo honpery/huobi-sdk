@@ -27,6 +27,14 @@ export const Periods: {} = {
 
 // K线数据
 export interface Kline {
+    id?: number;
+    open?: number;
+    close?: number;
+    low?: number;
+    high?: number;
+    amount?: number;
+    vol?: number;
+    count?: number;
 }
 
 // depth类型

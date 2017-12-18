@@ -1,7 +1,7 @@
 /**
  * 行情API
  */
-import { DepthType, HSymbol, Period } from '../types';
+import { DepthType, HSymbol, Kline, Period } from '../types';
 import { BaseAPI } from './_base';
 
 export class MarketAPI extends BaseAPI {
@@ -14,11 +14,13 @@ export class MarketAPI extends BaseAPI {
      * @param size 获取数量，默认150
      *
      */
-    getKlines(symbol: HSymbol, period: Period, size = 150) {
-        return this.http.get({
+    async getKlines(symbol: HSymbol, period: Period, size = 150) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.kline,
             query: { symbol, period, size },
         });
+
+        return this.json<Kline[]>(res);
     }
 
     /**
@@ -27,11 +29,13 @@ export class MarketAPI extends BaseAPI {
      * @param symbol 交易对
      *
      */
-    getMerged(symbol: HSymbol) {
-        return this.http.get({
+    async getMerged(symbol: HSymbol) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.merged,
             query: { symbol },
         });
+
+        return this.json(res);
     }
 
     /**
@@ -41,11 +45,13 @@ export class MarketAPI extends BaseAPI {
      * @param type Depth 类型
      *
      */
-    getDepth(symbol: HSymbol, type: DepthType) {
-        return this.http.get({
+    async getDepth(symbol: HSymbol, type: DepthType) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.depth,
             query: { symbol, type },
         });
+
+        return this.json(res);
     }
 
     /**
@@ -54,11 +60,13 @@ export class MarketAPI extends BaseAPI {
      * @param symbol 交易对
      *
      */
-    getTrade(symbol: HSymbol) {
-        return this.http.get({
+    async getTrade(symbol: HSymbol) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.trade,
             query: { symbol },
         });
+
+        return this.json(res);
     }
 
     /**
@@ -66,12 +74,15 @@ export class MarketAPI extends BaseAPI {
      *
      * @param symbol 交易对
      * @param size 获取交易记录的数量
+     *
      */
-    getHistoryTrade(symbol: HSymbol, size = 1) {
-        return this.http.get({
+    async getHistoryTrade(symbol: HSymbol, size = 1) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.historyTrade,
             query: { symbol, size },
         });
+
+        return this.json(res);
     }
 
     /**
@@ -80,11 +91,13 @@ export class MarketAPI extends BaseAPI {
      * @param symbol 交易对
      *
      */
-    getDetail(symbol: HSymbol) {
-        return this.http.get({
+    async getDetail(symbol: HSymbol) {
+        const { res } = await this.http.get({
             api: this.apis.rest.market.detail,
             query: { symbol },
         });
+
+        return this.json(res);
     }
 
 }
