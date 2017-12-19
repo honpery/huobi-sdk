@@ -6,6 +6,7 @@ export interface ResData<T> {
     ch?: string;
     ts?: number;
     data?: T;
+    tick?: T;
     'err-code'?: string;
     'err-msg'?: string;
 }
@@ -38,7 +39,7 @@ export class BaseAPI {
         const json = await res.json() as ResData<T>;
 
         if (json.status === 'ok') {
-            result.data = json.data;
+            result.data = json.data || json.tick;
             result.ch = json.ch;
             result.ts = json.ts;
             return result;

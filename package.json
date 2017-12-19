@@ -5,8 +5,8 @@
     "typing": "./dist/index.d.js",
     "scripts": {
         "ncu": "ncu -au && yarn",
-        "test": "mocha -r ts-node/register test/**/*.ts",
-        "test:w": "mocha -r ts-node/register --watch-extensions ts --watch test/**/*.ts",
+        "test": "mocha -r ts-node/register test/**/*.ts --timeout 15000",
+        "test:w": "mocha -r ts-node/register --watch-extensions ts --watch test/**/*.ts --timeout 15000",
         "build": "rm -r dist; tsc --rootDir src"
     },
     "repository": "git@github.com:honpery/huobi-sdk.git",

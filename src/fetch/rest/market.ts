@@ -1,7 +1,7 @@
 /**
  * 行情API
  */
-import { DepthType, HSymbol, Kline, Period } from '../types';
+import { Depth, DepthType, HSymbol, Kline, Market, Merged, Period, Trend } from '../types';
 import { BaseAPI } from './_base';
 
 export class MarketAPI extends BaseAPI {
@@ -35,7 +35,7 @@ export class MarketAPI extends BaseAPI {
             query: { symbol },
         });
 
-        return this.json(res);
+        return this.json<Merged>(res);
     }
 
     /**
@@ -51,7 +51,7 @@ export class MarketAPI extends BaseAPI {
             query: { symbol, type },
         });
 
-        return this.json(res);
+        return this.json<Depth>(res);
     }
 
     /**
@@ -59,6 +59,7 @@ export class MarketAPI extends BaseAPI {
      *
      * @param symbol 交易对
      *
+     * todo 本接口结构有问题
      */
     async getTrade(symbol: HSymbol) {
         const { res } = await this.http.get({
@@ -66,7 +67,7 @@ export class MarketAPI extends BaseAPI {
             query: { symbol },
         });
 
-        return this.json(res);
+        return this.json<Trend[]>(res);
     }
 
     /**
@@ -75,6 +76,8 @@ export class MarketAPI extends BaseAPI {
      * @param symbol 交易对
      * @param size 获取交易记录的数量
      *
+     * todo 本接口结构有问题
+     *
      */
     async getHistoryTrade(symbol: HSymbol, size = 1) {
         const { res } = await this.http.get({
@@ -82,7 +85,7 @@ export class MarketAPI extends BaseAPI {
             query: { symbol, size },
         });
 
-        return this.json(res);
+        return this.json<Trend[]>(res);
     }
 
     /**
@@ -97,7 +100,7 @@ export class MarketAPI extends BaseAPI {
             query: { symbol },
         });
 
-        return this.json(res);
+        return this.json<Market>(res);
     }
 
 }
