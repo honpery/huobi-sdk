@@ -68,8 +68,15 @@ export interface Trend {
     id?: number;                 // 成交id
     price?: number;              // 成交价钱
     amount?: number;             // 成交量
-    direction?: number;          // 主动成交方向
+    direction?: 'sell' | 'buy';  // 主动成交方向
     ts?: number;                 // 成交时间
+}
+
+// Trade Detail 返回结果
+export interface TrendResult {
+    id?: number;
+    ts?: number;
+    data: Trend[];
 }
 
 // market detail数据
