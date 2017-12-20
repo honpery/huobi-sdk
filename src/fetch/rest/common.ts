@@ -1,6 +1,7 @@
 /**
  * 公共API
  */
+import { Currency, SymbolDetail } from '../types';
 import { BaseAPI } from './_base';
 
 export class CommonAPI extends BaseAPI {
@@ -13,7 +14,7 @@ export class CommonAPI extends BaseAPI {
             api: this.apis.rest.common.symbols,
         });
 
-        return this.json(res);
+        return this.json<SymbolDetail[]>(res);
     }
 
     /**
@@ -24,7 +25,7 @@ export class CommonAPI extends BaseAPI {
             api: this.apis.rest.common.currencys,
         });
 
-        return this.json(res);
+        return this.json<Currency[]>(res);
     }
 
     /**
@@ -35,7 +36,7 @@ export class CommonAPI extends BaseAPI {
             api: this.apis.rest.common.timestamp,
         });
 
-        return this.json(res);
+        return this.json<number>(res);
     }
 
 }

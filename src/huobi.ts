@@ -1,4 +1,4 @@
-import { MarketAPI } from './fetch';
+import { CommonAPI, MarketAPI } from './fetch';
 
 export interface HuobiOptions {
     AccessKey?: string;
@@ -6,6 +6,7 @@ export interface HuobiOptions {
 
 export class Huobi {
     market = new MarketAPI();
+    common = new CommonAPI();
 
     constructor(private _options: HuobiOptions) { }
 
