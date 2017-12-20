@@ -1,28 +1,6 @@
-// 交易对
-export type HSymbol = 'btcusdt' | 'ethusdt' | 'ltcusdt' | 'etcusdt' | 'bccusdt'
-    | 'bccbtc' | 'ethbtc' | 'ltcbtc' | 'etcbtc' | 'kncbtc' | 'zrxbtc' | 'astbtc' | 'rcnbtc' | 'rcneth';
-
-export const Symbols: {[k in HSymbol]: HSymbol} = {
-    btcusdt: 'btcusdt',
-    ethusdt: 'ethusdt',
-    ltcusdt: 'ltcusdt',
-    etcusdt: 'etcusdt',
-    bccusdt: 'bccusdt',
-    bccbtc: 'bccbtc',
-    ethbtc: 'ethbtc',
-    ltcbtc: 'ltcbtc',
-    etcbtc: 'etcbtc',
-    kncbtc: 'kncbtc',
-    zrxbtc: 'zrxbtc',
-    astbtc: 'astbtc',
-    rcnbtc: 'rcnbtc',
-    rcneth: 'rcneth',
-};
-
 // K线类型
-export type Period = '1min' | '5min' | '15min' | '30min' | '60min' | '1day' | '1mon' | '1week' | '1year';
-export type PeriodAbbr = 'm1' | 'm5' | 'm15' | 'm30' | 'm60' | 'd1' | 'd7' | 'd30' | 'y1';
-export const Periods: {[abbr in PeriodAbbr]: Period } = {
+export type Period = string;
+export const Periods = {
     m1: '1min',
     m5: '5min',
     m15: '15min',
@@ -35,8 +13,8 @@ export const Periods: {[abbr in PeriodAbbr]: Period } = {
 };
 
 // depth类型
-export type DepthType = 'step0' | 'step1' | 'step2' | 'step3' | 'step4' | 'step5';
-export const DepthTypes: {[k in DepthType]: DepthType} = {
+export type DepthType = string;
+export const DepthTypes = {
     step0: 'step0',
     step1: 'step1',
     step2: 'step2',
