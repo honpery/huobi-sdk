@@ -13,7 +13,7 @@
     "author": "honpery <honpery@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "xhttp-js": "^0.0.8"
+        "xhttp-js": "^0.0.9"
     },
     "devDependencies": {
         "@types/chai": "^4.0.10",
