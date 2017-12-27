@@ -1,7 +1,7 @@
 /**
  * 行情API
  */
-import { Depth, DepthType, DepthTypes, HSymbol, Kline, Market, Merged, Period, Trend, TrendResult } from '../types';
+import { Depth, DepthType, DepthTypes, HSymbol, Kline, Market, Merged, Period, Trend, TrendResult } from '../../types';
 import { BaseAPI } from './_base';
 
 export class MarketAPI extends BaseAPI {

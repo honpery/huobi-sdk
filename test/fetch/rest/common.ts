@@ -1,10 +1,14 @@
 import { expect } from 'chai';
-import { Huobi, Periods, Symbols } from '../../src';
-import { huobi } from './market';
+import { Periods, Symbols } from '../../../src';
+import { CommonAPI } from '../../../src/fetch';
+
+const common = new CommonAPI({
+    AccessKey: process.env.ACCESS_KEY,
+});
 
 describe.skip('rest common api.', () => {
     it('get symbols data.', done => {
-        huobi.common.getSymbols().then(({ code, data }) => {
+        common.getSymbols().then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -12,7 +16,7 @@ describe.skip('rest common api.', () => {
     });
 
     it('get currency data.', done => {
-        huobi.common.getCurrencys().then(({ code, data }) => {
+        common.getCurrencys().then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -20,7 +24,7 @@ describe.skip('rest common api.', () => {
     });
 
     it('get timestamp data.', done => {
-        huobi.common.getTimestamp().then(({ code, data }) => {
+        common.getTimestamp().then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();

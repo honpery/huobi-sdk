@@ -1,5 +1,6 @@
 import { Http } from 'xhttp-js';
 import { APIs, SERVERs } from '../../config';
+import { FetchOptions } from '../../types';
 
 export interface ResData<T> {
     status: 'ok' | 'error';
@@ -13,13 +14,19 @@ export interface ResData<T> {
 
 export class BaseAPI {
 
-    protected http = new Http({
-        apis: APIs,
-        servers: SERVERs,
-        env: 'prod',
-    });
+    protected http: Http<any>;
 
     protected apis = APIs;
+
+    constructor(protected _options: FetchOptions) {
+        const { AccessKey: AccessKeyId, SignatureMethod, SignatureVersion } = _options;
+        this.http = new Http({
+            apis: APIs,
+            servers: SERVERs,
+            env: 'prod',
+            query: { AccessKeyId, SignatureMethod, SignatureVersion },
+        });
+    }
 
     protected async json<T>(res: Response) {
         const result: {
@@ -36,7 +43,11 @@ export class BaseAPI {
             return result;
         }
 
-        const json = await res.json() as ResData<T>;
+        let json: ResData<T> | null = null;
+
+        json = await res.json();
+
+        if (!json) return result;
 
         if (json.status === 'ok') {
             result.data = json.data || json.tick;

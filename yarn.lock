@@ -10,6 +10,10 @@
   version "2.2.44"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.44.tgz#1d4a798e53f35212fd5ad4d04050620171cd5b5e"
 
+"@types/node@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.2.tgz#83b8103fa9a2c2e83d78f701a9aa7c9539739aa5"
+
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
@@ -3070,9 +3074,9 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
-xhttp-js@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/xhttp-js/-/xhttp-js-0.0.8.tgz#15522f77a38e8d823e435bb97c2ee80e05a46fd8"
+xhttp-js@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/xhttp-js/-/xhttp-js-0.0.10.tgz#fa22dac29baf8929dd5f6bc2cf823a78299473b6"
   dependencies:
     es6-promise "^4.1.1"
     isomorphic-fetch "^2.2.1"

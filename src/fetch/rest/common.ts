@@ -1,7 +1,7 @@
 /**
  * 公共API
  */
-import { Currency, SymbolDetail } from '../types';
+import { Currency, SymbolDetail } from '../../types';
 import { BaseAPI } from './_base';
 
 export class CommonAPI extends BaseAPI {

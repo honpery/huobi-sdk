@@ -5,9 +5,11 @@ export interface HuobiOptions {
 }
 
 export class Huobi {
-    market = new MarketAPI();
-    common = new CommonAPI();
+    market: MarketAPI;
+    common: CommonAPI;
 
-    constructor(private _options: HuobiOptions) { }
-
+    constructor(private _options: HuobiOptions) {
+        this.market = new MarketAPI(_options);
+        this.common = new CommonAPI(_options);
+    }
 }

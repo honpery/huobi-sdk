@@ -1,2 +1,2 @@
 export * from './huobi';
-export * from './fetch/types';
+export * from './types';

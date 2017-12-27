@@ -1,6 +1,7 @@
 /**
  * 用户资产API
  */
+import { Account, Balance } from '../../types';
 import { BaseAPI } from './_base';
 
 export class AccountAPI extends BaseAPI {
@@ -13,13 +14,14 @@ export class AccountAPI extends BaseAPI {
             api: this.apis.rest.account.accounts,
         });
 
-        return this.json(res);
+        return this.json<Account[]>(res);
     }
 
     /**
      * 查询指定账户的余额
      *
      * @param account_id 账户id
+     *
      */
     async getBalance(account_id: string) {
         const { res } = await this.http.get({
@@ -27,8 +29,7 @@ export class AccountAPI extends BaseAPI {
             params: [account_id],
         });
 
-        return this.json(res);
+        return this.json<Balance>(res);
     }
 
 }
-

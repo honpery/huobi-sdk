@@ -1,11 +1,14 @@
 import { expect } from 'chai';
-import { DepthTypes, Huobi, Periods, Symbols } from '../../src';
+import { DepthTypes, Periods, Symbols } from '../../../src';
+import { MarketAPI } from '../../../src/fetch';
 
-export const huobi = new Huobi({});
+const market = new MarketAPI({
+    AccessKey: process.env.ACCESS_KEY,
+});
 
 describe.skip('rest market api.', () => {
     it('get klines data.', done => {
-        huobi.market.getKlines(Symbols.USDT.BTC, Periods.d1).then(({ code, data }) => {
+        market.getKlines(Symbols.USDT.BTC, Periods.d1).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -13,7 +16,7 @@ describe.skip('rest market api.', () => {
     });
 
     it('get merge data.', done => {
-        huobi.market.getMerged(Symbols.USDT.BTC).then(({ code, data }) => {
+        market.getMerged(Symbols.USDT.BTC).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -21,7 +24,7 @@ describe.skip('rest market api.', () => {
     });
 
     it('get depth data.', done => {
-        huobi.market.getDepth(Symbols.USDT.BTC, DepthTypes.step0).then(({ code, data }) => {
+        market.getDepth(Symbols.USDT.BTC, DepthTypes.step0).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -29,7 +32,7 @@ describe.skip('rest market api.', () => {
     });
 
     it('get trade detail data.', done => {
-        huobi.market.getTrade(Symbols.USDT.BTC).then(({ code, data }) => {
+        market.getTrade(Symbols.USDT.BTC).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -37,7 +40,7 @@ describe.skip('rest market api.', () => {
     });
 
     it('get trend list data.', done => {
-        huobi.market.getTrades(Symbols.USDT.BTC).then(({ code, data }) => {
+        market.getTrades(Symbols.USDT.BTC).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();
@@ -45,7 +48,7 @@ describe.skip('rest market api.', () => {
     });
 
     it('get market detail data.', done => {
-        huobi.market.getDetail(Symbols.USDT.BTC).then(({ code, data }) => {
+        market.getDetail(Symbols.USDT.BTC).then(({ code, data }) => {
             console.log(data);
             expect(code).eq(0);
             done();

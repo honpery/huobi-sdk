@@ -2,4 +2,11 @@
 
 > 本SDK为[huobi](https://www.huobi.pro/zh-cn)的[官方API](https://github.com/huobiapi/API_Docs/wiki/REST_api_reference)的js封装。
 
-### apis
+### 安装
+
+```bash
+yarn add huobi-sdk
+```
+
+### LICENSE
+MIT

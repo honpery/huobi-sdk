@@ -1,6 +1,7 @@
 /**
  * 交易API
  */
+import { NewOrder, OrderID } from '../../types';
 import { BaseAPI } from './_base';
 
 export class OrderAPI extends BaseAPI {
@@ -10,13 +11,17 @@ export class OrderAPI extends BaseAPI {
      *
      * @param order 订单数据
      */
-    async place(order: any) {
-        const { res } = await this.http.post({
-            api: this.apis.rest.order.place,
-            body: order,
+    async place(order: NewOrder) {
+        const _order = Object.assign({}, order, {
+            'account-id': order['account-id'] + '',
         });
 
-        return this.json(res);
+        const { res } = await this.http.post({
+            api: this.apis.rest.order.place,
+            body: _order,
+        });
+
+        return this.json<OrderID>(res);
     }
 
     /**
@@ -25,13 +30,13 @@ export class OrderAPI extends BaseAPI {
      * @param order_id 订单id
      *
      */
-    async cancel(order_id: string) {
+    async cancel(order_id: OrderID) {
         const { res } = await this.http.post({
             api: this.apis.rest.order.cancel,
             params: [order_id],
         });
 
-        return this.json(res);
+        return this.json<OrderID>(res);
     }
 
     /**
@@ -40,10 +45,10 @@ export class OrderAPI extends BaseAPI {
      * @param order_ids 订单id数组
      *
      */
-    async cancels(order_ids: string[]) {
+    async cancels(order_ids: OrderID[]) {
         const { res } = await this.http.post({
             api: this.apis.rest.order.cancels,
-            body: { order_ids },
+            body: { 'order-ids': order_ids },
         });
 
         return this.json(res);
