@@ -3074,10 +3074,11 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
-xhttp-js@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/xhttp-js/-/xhttp-js-0.0.10.tgz#fa22dac29baf8929dd5f6bc2cf823a78299473b6"
+xhttp-js@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/xhttp-js/-/xhttp-js-0.0.11.tgz#fb0722b63facd9b5f51c935479282c0d82cb03bb"
   dependencies:
+    chalk "^2.3.0"
     es6-promise "^4.1.1"
     isomorphic-fetch "^2.2.1"
 

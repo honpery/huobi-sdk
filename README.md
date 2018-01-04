@@ -8,5 +8,29 @@
 yarn add huobi-sdk
 ```
 
+### Progress
+
+- [ ] Rest
+    - [x] `market`：行情
+    - [x] `common`：公共
+    - [ ] `account`：账户
+    - [ ] `order`：订单
+    - [ ] `margin`：借贷
+    - [ ] `dw`：虚拟币提现
+
+- [ ] ws
+    - [ ] `kline`
+    - [ ] `depth`
+    - [ ] `trand detail`
+    - [ ] `market detail`
+
+- [ ] rxjs
+    - [ ] `market`：行情
+    - [ ] `common`: 公共
+    - [ ] `account`: 账户
+    - [ ] `order`: 订单
+    - [ ] `margin`: 借贷
+    - [ ] `dw`: 虚拟币提现
+
 ### LICENSE
 MIT
