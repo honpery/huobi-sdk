@@ -10,9 +10,10 @@
   version "2.2.44"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.44.tgz#1d4a798e53f35212fd5ad4d04050620171cd5b5e"
 
-"@types/node@^8.5.2":
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.2.tgz#83b8103fa9a2c2e83d78f701a9aa7c9539739aa5"
+"@types/node@^14.0.7":
+  version "14.0.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.7.tgz#b024a1f3ed047241dbb7d348f74b999ad2952d65"
+  integrity sha512-34OSmTVzjEwTjdsDiwBzDEZ4wIiEyZJJe4zxM2GRMn4DgSK5vcghVbU/kBD9UTM+LgKbgjDoKjFQFpfdAfnQ6Q==
 
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
